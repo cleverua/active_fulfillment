@@ -44,6 +44,10 @@ module ActiveMerchant
         raise NotImplementedError.new("Subclasses must implement")
       end
 
+      def fetch_rate_data(order_id, shipping_address, line_items, options = {})
+        raise NotImplementedError.new("Subclasses must implement")
+      end
+
       def valid_credentials?
         raise NotImplementedError.new("Subclasses must implement")
       end
