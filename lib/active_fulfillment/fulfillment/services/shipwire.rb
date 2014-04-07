@@ -282,6 +282,8 @@ module ActiveMerchant
       end
 
       def parse_rate_response(xml)
+        Rails.logger.info("XML_____________________!!!!!!!!!!!!!!!!!!1")
+        Rails.logger.info(xml)
         response = {}
         response[:quote] = {}
         response[:warnings] = []
@@ -340,6 +342,8 @@ module ActiveMerchant
 
         response[:success] = response[:status] == 'OK'
         response[:message] = response[:success] ? "Successfully received the rate data" : message_from(response[:error_message])
+        Rails.logger.info("RESPONSE_____________________!!!!!!!!!!!!!!!!!!1")
+        Rails.logger.info(response)
         response
       end
 
